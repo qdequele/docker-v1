@@ -1,0 +1,2 @@
+docker-machine scp main.py Char:/home/docker
+docker run -it --name Abathur -d -v /home/docker:/root -w /root -p 3000:3000 python:2.7-slim python main.py
