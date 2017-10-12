@@ -1,0 +1,23 @@
+echo "Machines : (docker-machine ls)"
+docker-machine ls
+echo ""
+
+echo "Containers : (docker ps)"
+docker ps
+echo ""
+
+echo "Volumes : (docker volume ls)"
+docker volume ls
+echo ""
+
+echo "Services : (docker service ls)"
+docker service ls
+echo ""
+
+echo "Networks : (docker network ls)"
+docker network ls
+echo ""
+
+echo "Nodes : (docker node ls)"
+docker node ls
+echo ""

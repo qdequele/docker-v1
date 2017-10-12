@@ -1,0 +1,1 @@
+docker-machine ssh Aiur "echo `docker swarm join-token worker` | cut -d : -f2"

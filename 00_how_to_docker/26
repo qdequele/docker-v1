@@ -1,0 +1,8 @@
+docker service create \
+    --replicas 2 \
+    --network overmind \
+    --detach=false \
+    -e OC_USERNAME=qdequele \
+    -e OC_PASSWD=toto \
+    --name engineering-bay \
+    42school/engineering-bay
