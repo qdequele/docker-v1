@@ -1,0 +1,43 @@
+version: '3'
+
+services:
+  web:
+    image: mr_web
+    ports:
+    - "5000:5000"
+    volumes:
+    - .:/code
+
+  authentification:
+    links:
+    - redis
+
+  redis:
+    image: redis:alpine
+    hostname: redis
+
+  rabbitmq:
+    image: rabbitmq:alpine
+    hostname: rabbit
+    cap_add:
+    - ALL
+    - NET_ADMIN
+    - SYS_ADMIN
+    ports:
+    - "1883:1883"
+    - "5672:5672"
+    - "8883:8883"
+    - "15672:15672"
+
+  mongodb:
+    image: mongo:alpine
+    hostname: mongo
+    ports:
+    - 27017
+
+  postgres:
+    image: postgres:9.6.2-alpine
+    hostname: postgres
+    environment:
+      POSTGRES_USER: music
+      POSTGRES_DB: music_room
